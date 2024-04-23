@@ -1,0 +1,46 @@
+<div>
+  <.header>
+    <%= @title %>
+    <:subtitle>Add all numbers in your currency</:subtitle>
+  </.header>
+
+  <.simple_form for={@form} id="user_number-form" phx-change="remove" phx-submit="calculate">
+    <.input
+      field={@form[:house_taxes]}
+      type="number"
+      label="How much have you paid in interest on you house loan this year?"
+    />
+    <.input
+      field={@form[:future_house_taxes]}
+      type="number"
+      label="how much more are you going to pay this year?"
+    />
+    <%!-- add future_house_taxes to handle month instead --%>
+    <.input
+      field={@form[:split_house_taxes]}
+      type="checkbox"
+      label="Do you share the house loan with a partner?"
+    />
+    <.input
+      field={@form[:salary_in]}
+      type="number"
+      label="How much have you got paid so far? (include holiday compensation and out payment you got, before taxes)"
+    />
+    <.input
+      field={@form[:salary_taxes_in]}
+      type="number"
+      label="How much have you paid in taxes so far?"
+    />
+    <.input field={@form[:future_salary]} type="number" label="Add future salary" />
+    <.input
+      field={@form[:service_pension]}
+      type="checkbox"
+      label="Are you paying your own Service pension?"
+    />
+    <.input field={@form[:service_pension_sum]} type="number" label="If so how much" />
+    <:actions>
+      <.button phx-disable-with="Saving...">Calculate tax balance</.button>
+    </:actions>
+    <div><%= @result %></div>
+  </.simple_form>
+</div>
