@@ -2,7 +2,7 @@
 
 Test project to train docker/kubernetes deployments.
 
-It calculate yearly income taxes for sweds, basic first version don't hold me to the correctness of this numbers. 😅
+It calculate yearly income taxes for sweds, basic first version, don't hold me to the correctness of these numbers. 😅
 
 To start your Phoenix server:
 
