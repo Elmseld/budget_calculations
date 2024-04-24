@@ -35,3 +35,6 @@ calculate_taxes-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore .env files for safety
+.envrc
+.env

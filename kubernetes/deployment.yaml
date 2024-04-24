@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taxes-deployment
+  labels:
+    app: calculate_taxes
+spec:
+  replicas: 3s
+  selector:
+    matchLabels:
+      app: calculate_taxes
+  template:
+    metadata:
+      labels:
+        app: calculate_taxes
+    spec:
+      containers:
+        - name: taxes-container
+          image: elmseldh/calculate_taxes
+          ports:
+            - containerPort: 80

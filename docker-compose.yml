@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  calculate_taxes:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      SECRET_KEY_BASE: really_long_secret # Can literally be anything, but generally generated randomly by tools like mix phx.gen.secret
+      INCOME_TAXES_RATE: 0.2139
+      INCOME_THRESHOLD_FOR_STATE_TAX: 615300

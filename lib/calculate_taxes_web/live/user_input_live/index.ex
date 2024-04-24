@@ -4,11 +4,11 @@ defmodule CalculateTaxesWeb.UserInputLive.Index do
   alias CalculateTaxes.TaxeCalc
 
   @user_input %{
-    "house_taxes" => 0,
+    "house_taxes" => 111_624,
     "future_house_taxes" => 0,
     "split_house_taxes" => false,
-    "salary_in" => 0,
-    "salary_taxes_in" => 0,
+    "salary_in" => 397_200,
+    "salary_taxes_in" => 84961,
     "future_salary" => 0,
     "service_pension" => false,
     "service_pension_sum" => 0

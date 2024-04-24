@@ -1,18 +1,9 @@
 defmodule CalculateTaxes.TaxeCalc do
-  defstruct house_taxes: 0,
-            future_house_taxes: 0,
-            split_house_taxes: false,
-            salary_in: 0,
-            salary_taxes_in: 0,
-            future_salary: 0,
-            service_pension: false,
-            service_pension_sum: 0
-
   @bool_key [:service_pension, :split_house_taxes]
   @moduledoc """
   The TaxeCalc context.
   """
-  alias CalculateTaxes.TaxeCalc
+  alias CalculateTaxes.UserInput
 
   @doc """
   Returns what the taxes balance is.
@@ -25,7 +16,7 @@ defmodule CalculateTaxes.TaxeCalc do
   """
   def to_struct(user_params) do
     struct(
-      TaxeCalc,
+      UserInput,
       Enum.map(user_params, fn {k, v} -> update_value(String.to_existing_atom(k), v) end)
     )
   end
@@ -72,7 +63,7 @@ defmodule CalculateTaxes.TaxeCalc do
 
   defp calculate_tax(income, paid_taxes) do
     # TODO - add a more correct tax_rate based on income
-    tax_rate = 0.30
+    tax_rate = System.get_env("INCOME_TAXES_RATE") |> String.to_float()
     income * tax_rate - paid_taxes
   end
 
