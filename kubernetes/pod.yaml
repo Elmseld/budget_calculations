@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: calculate-taxes-pod
+  labels:
+    name: calculate-taxes-pod
+    app: calculate-taxes-app
+spec:
+  containers:
+    - name: calculate-taxes
+      image: elmseldh/calculate_taxes
+      ports:
+        - containerPort: 80
+      env:
+        - name: SECRET_KEY_BASE
+          value: "really-long-key"
+        - name: INCOME_THRESHOLD_FOR_STATE_TAX
+          value: 615300
+        - name: INCOME_TAXES_RATE
+          value: 0.2139

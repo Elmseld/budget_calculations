@@ -1,21 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: taxes-deployment
+  name: calculate_taxes-deploy
   labels:
-    app: calculate_taxes
+    name: calculate_taxes-deploy
+    app: calculate_taxes-app
 spec:
-  replicas: 3s
+  replicas: 1
   selector:
     matchLabels:
-      app: calculate_taxes
+      name: calculate_taxes-pod
+      app: calculate_taxes-app
+
   template:
     metadata:
+      name: calculate_taxes-pod
       labels:
-        app: calculate_taxes
+        name: calculate_taxes-pod
+        app: calculate_taxes-app
     spec:
       containers:
-        - name: taxes-container
+        - name: calculate_taxes
           image: elmseldh/calculate_taxes
           ports:
             - containerPort: 80
