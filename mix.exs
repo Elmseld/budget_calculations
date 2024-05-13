@@ -1,9 +1,9 @@
-defmodule CalculateTaxes.MixProject do
+defmodule BudgetCalculations.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :calculate_taxes,
+      app: :budget_calculations,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule CalculateTaxes.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {CalculateTaxes.Application, []},
+      mod: {BudgetCalculations.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -69,10 +69,10 @@ defmodule CalculateTaxes.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind calculate_taxes", "esbuild calculate_taxes"],
+      "assets.build": ["tailwind budget_calculations", "esbuild budget_calculations"],
       "assets.deploy": [
-        "tailwind calculate_taxes --minify",
-        "esbuild calculate_taxes --minify",
+        "tailwind budget_calculations --minify",
+        "esbuild budget_calculations --minify",
         "phx.digest"
       ]
     ]

@@ -1,7 +1,7 @@
-defmodule CalculateTaxesWeb.UserInputLive.Index do
-  use CalculateTaxesWeb, :live_view
+defmodule BudgetCalculationsWeb.TaxesLive.Index do
+  use BudgetCalculationsWeb, :live_view
 
-  alias CalculateTaxes.TaxeCalc
+  alias BudgetCalculations.Calculate
 
   @user_input %{
     "house_taxes" => 0,
@@ -24,11 +24,12 @@ defmodule CalculateTaxesWeb.UserInputLive.Index do
   end
 
   @impl true
+  @spec handle_event(<<_::48, _::_*24>>, any(), map()) :: {:noreply, map()}
   def handle_event("calculate", user_number_params, socket) do
     result =
       user_number_params
-      |> TaxeCalc.to_struct()
-      |> TaxeCalc.calculate()
+      |> Calculate.to_struct()
+      |> Calculate.budget_calculations()
 
     {:noreply,
      socket

@@ -1,12 +1,12 @@
-defmodule CalculateTaxesWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :calculate_taxes
+defmodule BudgetCalculationsWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :budget_calculations
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_calculate_taxes_key",
+    key: "_budget_calculations_key",
     signing_salt: "5aBbUxh2",
     same_site: "Lax"
   ]
@@ -21,9 +21,9 @@ defmodule CalculateTaxesWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :calculate_taxes,
+    from: :budget_calculations,
     gzip: false,
-    only: CalculateTaxesWeb.static_paths()
+    only: BudgetCalculationsWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -48,5 +48,5 @@ defmodule CalculateTaxesWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug CalculateTaxesWeb.Router
+  plug BudgetCalculationsWeb.Router
 end

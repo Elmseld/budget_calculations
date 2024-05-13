@@ -2,11 +2,11 @@
 export LC_CTYPE=C
 export LANG=C
 
-NEW_NAME="CalculateTaxes"
-NEW_OTP="calculate_taxes"
+NEW_NAME="BudgetCalculations"
+NEW_OTP="budget_calculations"
 
-CURRENT_NAME="TaxesFix"
-CURRENT_OTP="taxes_fix"
+CURRENT_NAME="CalculateTaxes"
+CURRENT_OTP="calculate_taxes"
 
 set -e
 

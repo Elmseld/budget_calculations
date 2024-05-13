@@ -6,7 +6,7 @@ import Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :calculate_taxes, CalculateTaxesWeb.Endpoint,
+config :budget_calculations, BudgetCalculationsWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -15,8 +15,8 @@ config :calculate_taxes, CalculateTaxesWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "LaL9BiHinOo509RNKvMDC1J6dF2uRroqACUGwGkdS45XoQeQhPFMvVZsOjwpxpoE",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:calculate_taxes, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:calculate_taxes, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:budget_calculations, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:budget_calculations, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -43,17 +43,17 @@ config :calculate_taxes, CalculateTaxesWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :calculate_taxes, CalculateTaxesWeb.Endpoint,
+config :budget_calculations, BudgetCalculationsWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/calculate_taxes_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/budget_calculations_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :calculate_taxes, dev_routes: true
+config :budget_calculations, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

@@ -1,8 +1,8 @@
-defmodule CalculateTaxesWeb.UserInputLiveTest do
-  use CalculateTaxesWeb.ConnCase
+defmodule BudgetCalculationsWeb.TaxesLiveTest do
+  use BudgetCalculationsWeb.ConnCase
 
   import Phoenix.LiveViewTest
-  import CalculateTaxes.TaxeCalcFixtures
+  import BudgetCalculations.CalculateFixtures
 
   @create_attrs %{}
   @update_attrs %{}

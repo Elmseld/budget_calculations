@@ -1,4 +1,4 @@
-# CalculateTaxes
+# BudgetCalculations
 
 Test project to train docker/kubernetes deployments.
 

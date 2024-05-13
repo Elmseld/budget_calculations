@@ -1,10 +1,10 @@
-defmodule CalculateTaxesWeb.PageHTML do
+defmodule BudgetCalculationsWeb.PageHTML do
   @moduledoc """
   This module contains pages rendered by PageController.
 
   See the `page_html` directory for all templates available.
   """
-  use CalculateTaxesWeb, :html
+  use BudgetCalculationsWeb, :html
 
   embed_templates "page_html/*"
 end

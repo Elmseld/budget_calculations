@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: calculate-taxes
-      image: elmseldh/calculate_taxes
+      image: elmseldh/budget_calculations
       ports:
         - containerPort: 80
       env:

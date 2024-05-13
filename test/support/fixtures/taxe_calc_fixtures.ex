@@ -1,7 +1,7 @@
-defmodule CalculateTaxes.TaxeCalcFixtures do
+defmodule BudgetCalculations.CalculateFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `CalculateTaxes.TaxeCalc` context.
+  entities via the `BudgetCalculations.Calculate` context.
   """
 
   @doc """
@@ -10,10 +10,8 @@ defmodule CalculateTaxes.TaxeCalcFixtures do
   def user_input_fixture(attrs \\ %{}) do
     {:ok, user_input} =
       attrs
-      |> Enum.into(%{
-
-      })
-      |> CalculateTaxes.TaxeCalc.create_user_input()
+      |> Enum.into(%{})
+      |> BudgetCalculations.Calculate.create_user_input()
 
     user_input
   end

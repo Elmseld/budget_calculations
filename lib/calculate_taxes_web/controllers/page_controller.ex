@@ -1,5 +1,5 @@
-defmodule CalculateTaxesWeb.PageController do
-  use CalculateTaxesWeb, :controller
+defmodule BudgetCalculationsWeb.PageController do
+  use BudgetCalculationsWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

@@ -1,3 +1,3 @@
-defmodule CalculateTaxes.Mailer do
-  use Swoosh.Mailer, otp_app: :calculate_taxes
+defmodule BudgetCalculations.Mailer do
+  use Swoosh.Mailer, otp_app: :budget_calculations
 end

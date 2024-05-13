@@ -1,4 +1,4 @@
-defmodule CalculateTaxesWeb.CoreComponents do
+defmodule BudgetCalculationsWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule CalculateTaxesWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import CalculateTaxesWeb.Gettext
+  import BudgetCalculationsWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -661,9 +661,9 @@ defmodule CalculateTaxesWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(CalculateTaxesWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(BudgetCalculationsWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(CalculateTaxesWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(BudgetCalculationsWeb.Gettext, "errors", msg, opts)
     end
   end
 

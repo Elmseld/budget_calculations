@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: calculate_taxes-deploy
+  name: budget_calculations-deploy
   labels:
-    name: calculate_taxes-deploy
-    app: calculate_taxes-app
+    name: budget_calculations-deploy
+    app: budget_calculations-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: calculate_taxes-pod
-      app: calculate_taxes-app
+      name: budget_calculations-pod
+      app: budget_calculations-app
 
   template:
     metadata:
-      name: calculate_taxes-pod
+      name: budget_calculations-pod
       labels:
-        name: calculate_taxes-pod
-        app: calculate_taxes-app
+        name: budget_calculations-pod
+        app: budget_calculations-app
     spec:
       containers:
-        - name: calculate_taxes
-          image: elmseldh/calculate_taxes
+        - name: budget_calculations
+          image: elmseldh/budget_calculations
           ports:
             - containerPort: 80

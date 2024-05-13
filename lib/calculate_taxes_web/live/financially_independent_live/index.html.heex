@@ -1,0 +1,35 @@
+<div>
+  <.header>
+    <%= @title %>
+    <:subtitle>Add all numbers in your currency</:subtitle>
+  </.header>
+
+  <.simple_form for={@form} id="user_number-form" phx-change="remove" phx-submit="calculate">
+    <.input
+      field={@form[:living_amount]}
+      type="number"
+      label="How much do you want to get out each month?"
+    />
+    <.input
+      field={@form[:start_amount]}
+      type="number"
+      label="how much are you starting with now?"
+    />
+    <.input
+      field={@form[:expected_interst]}
+      type="number"
+      label="What interst are you calculating on (in percent)?"
+    />
+    <.input
+      field={@form[:save_per_month]}
+      type="number"
+      label="How much are you going to save each month?"
+    />
+    <:actions>
+      <.button phx-disable-with="Saving...">
+        Calculate how many year to  finacial independent
+      </.button>
+    </:actions>
+    <div><%= @result %></div>
+  </.simple_form>
+</div>

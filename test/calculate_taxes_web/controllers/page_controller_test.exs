@@ -1,5 +1,5 @@
-defmodule CalculateTaxesWeb.PageControllerTest do
-  use CalculateTaxesWeb.ConnCase
+defmodule BudgetCalculationsWeb.PageControllerTest do
+  use BudgetCalculationsWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

@@ -1,4 +1,4 @@
-defmodule CalculateTaxesWeb.Telemetry do
+defmodule BudgetCalculationsWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -63,7 +63,7 @@ defmodule CalculateTaxesWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {CalculateTaxesWeb, :count_users, []}
+      # {BudgetCalculationsWeb, :count_users, []}
     ]
   end
 end

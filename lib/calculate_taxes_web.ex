@@ -1,12 +1,12 @@
-defmodule CalculateTaxesWeb do
+defmodule BudgetCalculationsWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use CalculateTaxesWeb, :controller
-      use CalculateTaxesWeb, :html
+      use BudgetCalculationsWeb, :controller
+      use BudgetCalculationsWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule CalculateTaxesWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: CalculateTaxesWeb.Layouts]
+        layouts: [html: BudgetCalculationsWeb.Layouts]
 
       import Plug.Conn
-      import CalculateTaxesWeb.Gettext
+      import BudgetCalculationsWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule CalculateTaxesWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {CalculateTaxesWeb.Layouts, :app}
+        layout: {BudgetCalculationsWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule CalculateTaxesWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import CalculateTaxesWeb.CoreComponents
-      import CalculateTaxesWeb.Gettext
+      import BudgetCalculationsWeb.CoreComponents
+      import BudgetCalculationsWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule CalculateTaxesWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: CalculateTaxesWeb.Endpoint,
-        router: CalculateTaxesWeb.Router,
-        statics: CalculateTaxesWeb.static_paths()
+        endpoint: BudgetCalculationsWeb.Endpoint,
+        router: BudgetCalculationsWeb.Router,
+        statics: BudgetCalculationsWeb.static_paths()
     end
   end
 
