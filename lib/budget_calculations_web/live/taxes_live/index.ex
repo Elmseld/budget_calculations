@@ -4,6 +4,7 @@ defmodule BudgetCalculationsWeb.TaxesLive.Index do
   alias BudgetCalculations.Calculate
 
   @user_input %{
+    "country" => "se",
     "house_taxes" => 0,
     "future_house_taxes" => 0,
     "split_house_taxes" => false,
@@ -20,7 +21,9 @@ defmodule BudgetCalculationsWeb.TaxesLive.Index do
      socket
      |> assign(:title, "Calculate future taxes:")
      |> assign(:form, to_form(@user_input, name: "user_input"))
-     |> assign(:result, "")}
+     |> assign(:result, "")
+     |> assign(countries: countries())
+     |> assign(selected_country: "se")}
   end
 
   @impl true
@@ -33,6 +36,7 @@ defmodule BudgetCalculationsWeb.TaxesLive.Index do
 
     {:noreply,
      socket
+     |> assign(selected_country: user_number_params["country"])
      |> assign(:result, result)}
   end
 
@@ -40,5 +44,9 @@ defmodule BudgetCalculationsWeb.TaxesLive.Index do
     {:noreply,
      socket
      |> assign(:result, "")}
+  end
+
+  def countries do
+    ["se", "us", "de"]
   end
 end

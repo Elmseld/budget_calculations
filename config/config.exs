@@ -34,7 +34,7 @@ config :budget_calculations,
   countries: %{
     "se" => %{
       income_threshold_for_state_tax: 615_300,
-      income_taxes_rate: 0.3,
+      income_taxes_rate: 0.23,
       service_pension_max: 573_000
     },
     # TODO - update with real number

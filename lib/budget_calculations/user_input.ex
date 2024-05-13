@@ -10,5 +10,6 @@ defmodule BudgetCalculations.UserInput do
             living_amount: 0,
             start_amount: 0,
             expected_interst: 0,
-            save_per_month: 0
+            save_per_month: 0,
+            country: nil
 end

@@ -5,6 +5,19 @@
   </.header>
 
   <.simple_form for={@form} id="user_number-form" phx-change="remove" phx-submit="calculate">
+    <.label>Which are you home country?</.label>
+    <div class="flex">
+      <.input
+        :for={option <- @countries}
+        field={@form[:country]}
+        id={option}
+        type="radio"
+        label={String.upcase(option)}
+        value={option}
+        checked={@selected_country == option || @form[:country].value == String.to_atom(option)}
+      />
+    </div>
+
     <.input
       field={@form[:house_taxes]}
       type="number"

@@ -276,7 +276,7 @@ defmodule BudgetCalculationsWeb.CoreComponents do
   attr :type, :string,
     default: "text",
     values: ~w(checkbox color date datetime-local email file month number password
-               range search select tel text textarea time url week)
+               range search select tel text textarea time url week radio )
 
   attr :field, Phoenix.HTML.FormField,
     doc: "a form field struct retrieved from the form, for example: @form[:email]"
@@ -363,6 +363,17 @@ defmodule BudgetCalculationsWeb.CoreComponents do
         {@rest}
       ><%= Phoenix.HTML.Form.normalize_value("textarea", @value) %></textarea>
       <.error :for={msg <- @errors}><%= msg %></.error>
+    </div>
+    """
+  end
+
+  def input(%{type: "radio"} = assigns) do
+    ~H"""
+    <div class="flex items-center me-4">
+      <label class="flex items-center gap-2 text-sm leading-6 text-zinc-600">
+        <input type="radio" id={@id} name={@name} value={@value} checked={@checked} class="" {@rest} />
+        <%= @label %>
+      </label>
     </div>
     """
   end

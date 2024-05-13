@@ -1,5 +1,6 @@
 defmodule BudgetCalculations.Calculate do
   @bool_key [:service_pension, :split_house_taxes]
+  @string_key [:country]
   @moduledoc """
   The Calculate context.
   """
@@ -21,8 +22,8 @@ defmodule BudgetCalculations.Calculate do
     future_salary = input.future_salary
     service_pension = input.service_pension
     service_pension_sum = input.service_pension_sum
+    country = input.country |> IO.inspect()
 
-    country = System.get_env("COUNTRY_CODE", "se")
     country_spec = Application.get_env(:budget_calculations, :countries)[country]
 
     income_threshold_for_state_tax =
@@ -112,6 +113,7 @@ defmodule BudgetCalculations.Calculate do
   end
 
   defp update_value(key, value) when key in @bool_key, do: {key, String.to_existing_atom(value)}
+  defp update_value(key, value) when key in @string_key, do: {key, value}
   defp update_value(key, ""), do: {key, 0}
   defp update_value(key, value), do: {key, String.to_integer(value)}
 end
