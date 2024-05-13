@@ -114,7 +114,4 @@ defmodule BudgetCalculations.Calculate do
   defp update_value(key, value) when key in @bool_key, do: {key, String.to_existing_atom(value)}
   defp update_value(key, ""), do: {key, 0}
   defp update_value(key, value), do: {key, String.to_integer(value)}
-
-  defp to_int_or_nil(value) when is_binary(value), do: String.to_integer(value)
-  defp to_int_or_nil(_), do: nil
 end
